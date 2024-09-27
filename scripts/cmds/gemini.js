@@ -1,7 +1,7 @@
 const axios = require("axios");
 module.exports = {
     config: {
-        name: "gemini",
+        name: "ask",
         author: "Renz",
         category: "ai",
         version: "0.0.1",
@@ -17,7 +17,7 @@ module.exports = {
        console.error("Error");
 
 }
-                if (event.messageReply.attachments.type == "photo") {
+                if (event.messageReply.attachments.length > 0) {
                     const fileUrl = event.messageReply.attachments[0].url;
                     
                     console.log(fileUrl)
@@ -61,5 +61,8 @@ module.exports = {
                 "An error occured. Contact admin for assistance."
             );
         }
+    },
+    onChat: async function({message, args, event, api}) {
+      
     }
 };
