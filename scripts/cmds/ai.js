@@ -48,6 +48,8 @@ module.exports = {
       if(prefix.startsWith("ai")) {
  const { messageID, threadID} = event;
       const input = prefix.replace(/^ai\s*/, "").trim()
+
+     console.log(input)     
     const id = event.senderID;
 
     const apiUrl = `https://jonellccprojectapis10.adaptable.app/api/gptconvo?ask=${encodeURIComponent(args.join(" "))}&id=${id}`;
@@ -55,7 +57,7 @@ module.exports = {
     const lad = await message.reply("🔎 Searching for an answer. Please wait...");
 
     try {
-        if (event.type === "message_reply" && event.messageReply.attachments && event.messageReply.attachments[0]) {
+        if (event.type == "message_reply" && event.messageReply.attachments?.length > 0) {
             const attachment = event.messageReply.attachments[0];
 
             if (attachment.type === "photo") {
@@ -68,6 +70,7 @@ module.exports = {
                 if (vision) {
                     return api.editMessage(`𝗚𝗲𝗺𝗶𝗻𝗶 𝗩𝗶𝘀𝗶𝗼𝗻 𝗜𝗺𝗮𝗴𝗲 𝗥𝗲𝗰𝗼𝗴𝗻𝗶𝘁𝗶𝗼𝗻 \n━━━━━━━━━━━━━━━━━━\n${vision}\n━━━━━━━━━━━━━━━━━━\n`, lad.messageID, event.threadID, event.messageID);
                 } else {
+                    console.log
                     return api.sendMessage("🤖 Failed to recognize the image.", threadID, messageID);
                 }
             }

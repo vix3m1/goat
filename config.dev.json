@@ -1,7 +1,7 @@
 {
   "facebookAccount": {
-    "email": "61565489083058",
-    "password": "0000siege",
+    "email": "",
+    "password": "",
     "2FASecret": "",
     "i_user": "",
     "proxy": null,
@@ -12,8 +12,8 @@
   "antiInbox": false,
   "language": "en",
   "notesLanguage": "change to your language with ISO 639-1 code, available languages: vi (Vietnamese), en (English)",
-  "nickNameBot": "Cycle [ @ ]",
-  "prefix": "@",
+  "nickNameBot": "Cycle [ & ]",
+  "prefix": "&",
   "adminOnly": {
     "enable": false,
     "ignoreCommand": []
@@ -42,7 +42,7 @@
   "timeZone": "Asia/Ho_Chi_Minh",
   "credentials": {
     "gmailAccount": {
-      "email": "renzmansueto@outlook.com",
+      "email": "renzmansueto091@gmail.com",
       "clientId": "923633511859-qg8ohhu5p4229kmmstm4m2ajvpms5t4p.apps.googleusercontent.com",
       "clientSecret": "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",
       "refreshToken": "1//04xqyOATLmbxoCgYIARAAGAQSNwF-L9IrP2n5Ci6phfvLTgVlZ0ee_QoS_tct_SrCSUhIPXVP2USr-vYDNYWG8q50ED8vGCZbHRI",

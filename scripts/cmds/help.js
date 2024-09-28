@@ -3,7 +3,7 @@ const axios = require("axios");
 const path = require("path");
 const { getPrefix } = global.utils;
 const { commands, aliases } = global.GoatBot;
-const doNotDelete = "[ ☯️ | Cycle ]";
+const doNotDelete = "「 ✦ Cycle ✦ 」";
 /**
 * @author NTKhang
 * @author: do not delete it
@@ -35,17 +35,17 @@ module.exports = {
 	langs: {
 		en: {
 			help: "\nㅤㅤㅤㅤ"
-				+"\n    ㅤ ㅤ    %6"
-				+ "\n —————————————————"
+				+"\n    ㅤ    %6"
+				+ "\n ──────────────────"
 				+ "\n ㅤㅤㅤ"
-				+ " \n%1"
+				+ "\n%1"
 				+ "\n"
-				+ "\n ————————————————— \n"
-				+ "\n ☯️ | Cycle has %4 commands that can be used"
-				+ "\n — Use %5help <page> to view the command list"
-				+ "\n — Use %5help to view the details of how to use that command"
+				+ "\n ──────────────────"
+				+ "\n Cycle has %4 commands that can be used"
+				+ "\n\n Use %5help <page>"
+				+ "\n\nUse %5help to view the details of how to use that command"
 				+ "\n"
-				+ "\n   Page [ %2/%3 ]    %6"
+				+ `\n               Page [ %2/%3 ]`
 				+ "\n",
 			help2: "%1├───────⭔"
 				+ "\n│ » Currently, the bot has %2 commands that can be used"
@@ -165,7 +165,7 @@ module.exports = {
 
 				const returnArray = allPage[page - 1] || [];
 				const startNumber = (page - 1) * numberOfOnePage + 1;
-				msg += (returnArray || []).reduce((text, item, index) => text += `   ${index + startNumber}${index + startNumber < 10 ? "0" : ""} —  ${item.data}\n`, '').slice(0, -1);
+				msg += (returnArray || []).reduce((text, item, index) => text += `     ${index + startNumber < 10 ? "0" : ""}${index + startNumber} ◌  ${item.data}\n`, '').slice(0, -1);
 				await message.reply(getLang("help", msg, page, totalPage, commands.size, prefix, doNotDelete));
 			}
 			else if (sortHelp == "category") {
